@@ -102,6 +102,18 @@ void WundergroundClient::updateAlerts(String apiKey, String language, String cou
 }
 // end fowlerk add
 
+void WundergroundClient::updateAlertsUS(String apiKey, String language, String state, String city) {
+  currentAlert = 0;
+  activeAlertsCnt = 0;
+  isForecast = false;
+  isSimpleForecast = false;
+  isCurrentObservation = false;
+  isAlerts = true;
+  isAlertUS = true;
+  isAlertEU = false;
+  doUpdate("/api/" + apiKey + "/alerts/lang:" + language + "/q/" + state + "/" + city + ".json");
+}
+
 void WundergroundClient::updateAlertsPWS(String apiKey, String language, String country, String pws) {
   currentAlert = 0;
   activeAlertsCnt = 0;

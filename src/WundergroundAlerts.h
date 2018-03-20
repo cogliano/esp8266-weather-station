@@ -63,6 +63,7 @@ class WundergroundAlerts: public JsonListener {
   public:
     WundergroundAlerts();
     void updateAlerts(WGAlert *alert, uint8_t maxAlerts, String apiKey, String language, String country, String city);		// Added by fowlerk, 18-Dec-2016
+  	void updateAlertsUS(String apiKey, String language, String state, String city);	// Added by cogliano, 2018-03-20 for US alerts
     void updateAlertsPWS(WGAlert *alert, uint8_t maxAlerts, String apiKey, String language, String country, String pws);
     int getActiveAlertsCnt();
 
